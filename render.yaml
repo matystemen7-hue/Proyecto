@@ -2,6 +2,7 @@ services:
   - type: web
     name: trazabilidad-api
     runtime: python
+    plan: free
     rootDir: backend
     buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && python manage.py seed_demo
     startCommand: gunicorn config.wsgi:application
